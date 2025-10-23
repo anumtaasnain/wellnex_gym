@@ -117,10 +117,10 @@ export default function WhyWellnex() {
         style={{
           position: "relative",
           zIndex: 5,
-          width: "100%",       // ✅ full width
-          maxWidth: "1200px",  // ✅ limit on large screens
-          margin: "0 auto",    // ✅ center align
-          overflow: "hidden",  // ✅ stop layout bleeding
+          width: "100%",      
+          maxWidth: "1200px", 
+          margin: "0 auto",    
+          overflow: "hidden",  
         }}
       >
         {/* Section Header */}

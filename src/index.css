@@ -176,11 +176,11 @@ body {
 }
 
 .theme-red {
-  --theme-color: #f44336;
+  --theme-color: #f01000;
   --section-bg: linear-gradient(to bottom right, #ffebee, #161111);
 }
 :root {
-  --theme-color: #ff5722;
+  --theme-color: #f01000;
   --section-bg: #1f1616;
   --theme-color-light: #0f0f0f;
 }
@@ -211,7 +211,7 @@ body {
 }
 
 .theme-red {
-  --theme-color: #f44336;
+  --theme-color: #f01000;
   --theme-color-light: #050505;
   --section-bg: #fff8f8;
 }
