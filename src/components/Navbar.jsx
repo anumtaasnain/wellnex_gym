@@ -73,7 +73,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`position-fixed top-0 w-100 py-2 ${
+      className={`position-fixed top-0 w-100 py-4 ${
         scrolled ? "bg-dark shadow-lg" : "bg-transparent"
       }`}
       style={{

@@ -59,8 +59,8 @@ body {
 
 /* ===== Theme Color Classes (6 Options) ===== */
 .theme-red {
-  --theme-color: #be2227ff;
-  --btn-hover: #e23b3f;
+  --theme-color: olive;
+  --btn-hover: rgb(108, 108, 8);
 }
 
 .theme-blue {
@@ -143,14 +143,14 @@ body {
 }
 
 /* Define each color circle */
-.theme-red-circle { background-color: #be2227ff; }
+.theme-red-circle { background-color: rgb(111, 111, 3); }
 .theme-blue-circle { background-color: #007bff; }
 .theme-green-circle { background-color: #28a745; }
 .theme-orange-circle { background-color: #fd7e14; }
 .theme-purple-circle { background-color: #6f42c1; }
 .theme-pink-circle { background-color: #e83e8c; }
 :root {
-  --theme-color: #ff5722;
+  --theme-color: olive;
   --section-bg: linear-gradient(to bottom right, #f3f3f3, #ffffff);
 }
 
@@ -176,11 +176,11 @@ body {
 }
 
 .theme-red {
-  --theme-color: #f01000;
+  --theme-color:olive;
   --section-bg: linear-gradient(to bottom right, #ffebee, #161111);
 }
 :root {
-  --theme-color: #f01000;
+  --theme-color: rgb(15, 151, 205);
   --section-bg: #1f1616;
   --theme-color-light: #0f0f0f;
 }
@@ -211,7 +211,7 @@ body {
 }
 
 .theme-red {
-  --theme-color: #f01000;
+  --theme-color: olive;
   --theme-color-light: #050505;
   --section-bg: #fff8f8;
 }
@@ -243,5 +243,5 @@ body {
 
 /* 🌙 Dark Theme Gradient */
 [data-theme="dark"] {
-  --background-gradient: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2b2b2b, #b83030);
+  --background-gradient: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2b2b2b, rgb(166, 166, 38));
 }
