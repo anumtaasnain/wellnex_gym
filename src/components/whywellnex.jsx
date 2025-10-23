@@ -37,24 +37,22 @@ export default function WhyWellnex() {
     AOS.init({ duration: 900, once: true });
   }, []);
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 800,
- 
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2500,
-  cssEase: "ease",
-  pauseOnHover: true,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 768, settings: { slidesToShow: 1 } },
-    { breakpoint: 300, settings: { slidesToShow: 1 } },
-  ],
-};
-
-
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    cssEase: "ease",
+    pauseOnHover: true,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } }, // mobile fix
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
+  };
 
   return (
     <section
@@ -97,15 +95,14 @@ const settings = {
         ))}
       </div>
 
-      <div 
+      <div
         className="container"
         style={{
           position: "relative",
           zIndex: 5,
-          width: "90%",
+          width: "100%",
           maxWidth: "1200px",
           margin: "0 auto",
-           width: "100%", maxWidth: "1200px", margin: "0 auto" 
         }}
       >
         {/* Section Header */}
@@ -170,7 +167,6 @@ const settings = {
                     "0 8px 25px rgba(0,0,0,0.06)";
                 }}
               >
-                {/* Animated Gradient Glow Behind Icon */}
                 <div
                   style={{
                     position: "absolute",
@@ -187,7 +183,6 @@ const settings = {
                   }}
                 ></div>
 
-                {/* Icon Circle */}
                 <div
                   style={{
                     width: "90px",
@@ -214,7 +209,6 @@ const settings = {
                   />
                 </div>
 
-                {/* Text */}
                 <h5
                   style={{
                     fontWeight: "700",
@@ -240,17 +234,16 @@ const settings = {
                   {feature.desc}
                 </p>
 
-                {/* Animated underline */}
                 <div
                   style={{
                     width: "40px",
                     height: "3px",
-                    background: "linear-gradient(90deg, var(--theme-color), var(--theme-color-light))",
+                    background:
+                      "linear-gradient(90deg, var(--theme-color), var(--theme-color-light))",
                     margin: "15px auto 0",
                     borderRadius: "10px",
                     transition: "width 0.4s ease",
                   }}
-                  className="underline-effect"
                 ></div>
               </div>
             </div>
@@ -270,12 +263,38 @@ const settings = {
             100% { transform: rotate(360deg) translateX(250px) rotate(-360deg); }
           }
 
-          .slick-dots li button:before {
-            color: var(--theme-color);
+          .slick-slider {
+            width: 100%;
           }
 
-          * {
-            transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+          .slick-list {
+            overflow: hidden;
+          }
+
+          .slick-track {
+            display: flex !important;
+          }
+
+          .slick-slide {
+            display: flex !important;
+            justify-content: center;
+            align-items: stretch;
+            height: auto;
+          }
+
+          .slick-slide > div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+
+          .slick-slide > div > div {
+            width: 100%;
+            margin: 0 10px;
+          }
+
+          .slick-dots li button:before {
+            color: var(--theme-color);
           }
 
           @media (max-width: 768px) {
@@ -288,60 +307,15 @@ const settings = {
             p {
               font-size: 0.95rem !important;
             }
+            .slick-slide > div > div {
+              margin: 0 5px;
+            }
           }
 
           @media (max-width: 480px) {
-            h2 {
-              font-size: 1.7rem !important;
-            }
-            p {
-              font-size: 0.9rem !important;
-            }
+            h2 { font-size: 1.7rem !important; }
+            p { font-size: 0.9rem !important; }
           }
-            /* ---- Slick Slider Fixes ---- */
-.slick-slider {
-  width: 100%;
-}
-
-.slick-list {
-  overflow: hidden;
-}
-
-.slick-track {
-  display: flex !important;
-}
-
-.slick-slide {
-  display: flex !important;
-  justify-content: center;
-  align-items: stretch;
-  height: auto;
-}
-
-.slick-slide > div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/* Optional spacing */
-.slick-slide > div > div {
-  width: 100%;
-  margin: 0 10px;
-}
-
-/* Dots color */
-.slick-dots li button:before {
-  color: var(--theme-color);
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .slick-slide > div > div {
-    margin: 0 5px;
-  }
-}
-
         `}
       </style>
     </section>
