@@ -133,7 +133,7 @@ export default function StayConnected() {
                 Join Waitlist
               </button>
               <button
-                className="btn fw-semibold px-4 py-2"
+                className="btn fw-semibold px-4 py-2 mt-1"
                 style={{
                   border: "2px solid var(--theme-color)",
                   color: "var(--theme-color)",

@@ -37,7 +37,7 @@ export default function WhyWellnex() {
     AOS.init({ duration: 900, once: true });
   }, []);
 
-  const settings = {
+const settings = {
   dots: true,
   infinite: true,
   speed: 800,
@@ -50,9 +50,10 @@ export default function WhyWellnex() {
   responsive: [
     { breakpoint: 1024, settings: { slidesToShow: 2 } },
     { breakpoint: 768, settings: { slidesToShow: 1 } },
-        { breakpoint: 480, settings: { slidesToShow: 1 } },
+    { breakpoint: 440, settings: { slidesToShow: 1 } },
   ],
 };
+
 
 
   return (
@@ -96,7 +97,7 @@ export default function WhyWellnex() {
         ))}
       </div>
 
-      <div
+      <div 
         className="container"
         style={{
           position: "relative",
@@ -104,6 +105,7 @@ export default function WhyWellnex() {
           width: "90%",
           maxWidth: "1200px",
           margin: "0 auto",
+           width: "100%", maxWidth: "1200px", margin: "0 auto" 
         }}
       >
         {/* Section Header */}
@@ -296,6 +298,50 @@ export default function WhyWellnex() {
               font-size: 0.9rem !important;
             }
           }
+            /* ---- Slick Slider Fixes ---- */
+.slick-slider {
+  width: 100%;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: stretch;
+  height: auto;
+}
+
+.slick-slide > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Optional spacing */
+.slick-slide > div > div {
+  width: 100%;
+  margin: 0 10px;
+}
+
+/* Dots color */
+.slick-dots li button:before {
+  color: var(--theme-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .slick-slide > div > div {
+    margin: 0 5px;
+  }
+}
+
         `}
       </style>
     </section>
