@@ -40,17 +40,34 @@ export default function WhyWellnex() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    speed: 5000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
     cssEase: "ease",
     pauseOnHover: true,
+    swipeToSlide: true,
+    variableWidth: false,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } }, // mobile fix
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
     ],
   };
 
@@ -100,9 +117,10 @@ export default function WhyWellnex() {
         style={{
           position: "relative",
           zIndex: 5,
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
+          width: "100%",       // ✅ full width
+          maxWidth: "1200px",  // ✅ limit on large screens
+          margin: "0 auto",    // ✅ center align
+          overflow: "hidden",  // ✅ stop layout bleeding
         }}
       >
         {/* Section Header */}
@@ -167,6 +185,7 @@ export default function WhyWellnex() {
                     "0 8px 25px rgba(0,0,0,0.06)";
                 }}
               >
+                {/* Animated Gradient Glow Behind Icon */}
                 <div
                   style={{
                     position: "absolute",
@@ -183,6 +202,7 @@ export default function WhyWellnex() {
                   }}
                 ></div>
 
+                {/* Icon Circle */}
                 <div
                   style={{
                     width: "90px",
@@ -209,6 +229,7 @@ export default function WhyWellnex() {
                   />
                 </div>
 
+                {/* Text */}
                 <h5
                   style={{
                     fontWeight: "700",
@@ -234,16 +255,17 @@ export default function WhyWellnex() {
                   {feature.desc}
                 </p>
 
+                {/* Animated underline */}
                 <div
                   style={{
                     width: "40px",
                     height: "3px",
-                    background:
-                      "linear-gradient(90deg, var(--theme-color), var(--theme-color-light))",
+                    background: "linear-gradient(90deg, var(--theme-color), var(--theme-color-light))",
                     margin: "15px auto 0",
                     borderRadius: "10px",
                     transition: "width 0.4s ease",
                   }}
+                  className="underline-effect"
                 ></div>
               </div>
             </div>
@@ -253,6 +275,44 @@ export default function WhyWellnex() {
 
       <style>
         {`
+        /* --- Responsive slick slider fixes --- */
+.slick-slider {
+  width: 100% !important;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: stretch;
+  width: 100% !important;
+}
+
+.slick-slide > div {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide > div > div {
+  width: 100%;
+  max-width: 360px; /* ensures proper width on mobile */
+}
+
+/* Force 1 slide per row below 768px */
+@media (max-width: 768px) {
+  .slick-slide > div > div {
+    max-width: 90% !important;
+  }
+}
+
           @keyframes floatGlow {
             0% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
             100% { transform: translateX(-50%) translateY(10px); opacity: 0.4; }
@@ -263,38 +323,12 @@ export default function WhyWellnex() {
             100% { transform: rotate(360deg) translateX(250px) rotate(-360deg); }
           }
 
-          .slick-slider {
-            width: 100%;
-          }
-
-          .slick-list {
-            overflow: hidden;
-          }
-
-          .slick-track {
-            display: flex !important;
-          }
-
-          .slick-slide {
-            display: flex !important;
-            justify-content: center;
-            align-items: stretch;
-            height: auto;
-          }
-
-          .slick-slide > div {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-          }
-
-          .slick-slide > div > div {
-            width: 100%;
-            margin: 0 10px;
-          }
-
           .slick-dots li button:before {
             color: var(--theme-color);
+          }
+
+          * {
+            transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
           }
 
           @media (max-width: 768px) {
@@ -307,14 +341,15 @@ export default function WhyWellnex() {
             p {
               font-size: 0.95rem !important;
             }
-            .slick-slide > div > div {
-              margin: 0 5px;
-            }
           }
 
           @media (max-width: 480px) {
-            h2 { font-size: 1.7rem !important; }
-            p { font-size: 0.9rem !important; }
+            h2 {
+              font-size: 1.7rem !important;
+            }
+            p {
+              font-size: 0.9rem !important;
+            }
           }
         `}
       </style>
