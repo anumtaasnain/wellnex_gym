@@ -1,0 +1,247 @@
+/* ===== Global Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff; /* Background stays fixed */
+  color: var(--text-color);
+  transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+/* ===== Background Video ===== */
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ===== Section Heading ===== */
+.section-heading img {
+  margin: 10px auto;
+  display: block;
+}
+
+/* ===== Smooth Transitions (Global) ===== */
+* {
+  transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ===== Theme Variables ===== */
+:root {
+  --theme-color: #be2227ff; /* Default (Red) */
+  --text-color: #111;
+  --btn-bg: var(--theme-color);
+  --btn-hover: #ff474d;
+  --accent-color: var(--theme-color);
+}
+
+/* ===== Apply Theme Colors ===== */
+.text-theme {
+  color: var(--theme-color) !important;
+}
+
+.btn-theme {
+  background-color: var(--theme-color) !important;
+  color: #fff !important;
+  border: none;
+}
+
+.btn-theme:hover {
+  background-color: var(--btn-hover) !important;
+  box-shadow: 0 0 10px var(--theme-color);
+}
+
+/* ===== Theme Color Classes (6 Options) ===== */
+.theme-red {
+  --theme-color: #be2227ff;
+  --btn-hover: #e23b3f;
+}
+
+.theme-blue {
+  --theme-color: #007bff;
+  --btn-hover: #339cff;
+}
+
+.theme-green {
+  --theme-color: #28a745;
+  --btn-hover: #40c463;
+}
+
+.theme-orange {
+  --theme-color: #fd7e14;
+  --btn-hover: #ff9a45;
+}
+
+.theme-purple {
+  --theme-color: #6f42c1;
+  --btn-hover: #8c5ce6;
+}
+
+.theme-pink {
+  --theme-color: #e83e8c;
+  --btn-hover: #f062a1;
+}
+
+/* ===== Navbar Theme Styles ===== */
+.navbar a,
+.navbar button {
+  color: var(--text-color);
+}
+
+.navbar a.active,
+.navbar button.active {
+  color: var(--theme-color);
+}
+
+/* ===== Theme Palette Menu ===== */
+.theme-toggle {
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-options {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.theme-toggle.open .theme-options {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Theme circles */
+.theme-color-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-color-circle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Define each color circle */
+.theme-red-circle { background-color: #be2227ff; }
+.theme-blue-circle { background-color: #007bff; }
+.theme-green-circle { background-color: #28a745; }
+.theme-orange-circle { background-color: #fd7e14; }
+.theme-purple-circle { background-color: #6f42c1; }
+.theme-pink-circle { background-color: #e83e8c; }
+:root {
+  --theme-color: #ff5722;
+  --section-bg: linear-gradient(to bottom right, #f3f3f3, #ffffff);
+}
+
+/* Example theme variations */
+.theme-blue {
+  --theme-color: #2196f3;
+  --section-bg: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+}
+
+.theme-green {
+  --theme-color: #4caf50;
+  --section-bg: linear-gradient(to bottom right, #e8f5e9, #ffffff);
+}
+
+.theme-purple {
+  --theme-color: #9c27b0;
+  --section-bg: linear-gradient(to bottom right, #f3e5f5, #ffffff);
+}
+
+.theme-orange {
+  --theme-color: #ff9800;
+  --section-bg: linear-gradient(to bottom right, #fff3e0, #ffffff);
+}
+
+.theme-red {
+  --theme-color: #f44336;
+  --section-bg: linear-gradient(to bottom right, #ffebee, #161111);
+}
+:root {
+  --theme-color: #ff5722;
+  --section-bg: #1f1616;
+  --theme-color-light: #0f0f0f;
+}
+
+/* Theme Variants */
+.theme-blue {
+  --theme-color: #2196f3;
+  --theme-color-light: #0c7bcabb;
+  --section-bg: #f8fbff;
+}
+
+.theme-green {
+  --theme-color: #4caf50;
+  --theme-color-light: #e8f5e9;
+  --section-bg: #f9fff9;
+}
+
+.theme-purple {
+  --theme-color: #9c27b0;
+  --theme-color-light: #f3e5f5;
+  --section-bg: #faf5fb;
+}
+
+.theme-orange {
+  --theme-color: #ff9800;
+  --theme-color-light: #1d1a15;
+  --section-bg: #2c271e;
+}
+
+.theme-red {
+  --theme-color: #f44336;
+  --theme-color-light: #050505;
+  --section-bg: #fff8f8;
+}
+/* 🌈 Animated Gradient Background (Auto adapts to theme) */
+body {
+  background: var(--background-gradient);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  transition: background 0.8s ease;
+}
+
+/* ✨ Smooth Gradient Flow Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🌞 Light Theme Gradient */
+:root {
+  --background-gradient: linear-gradient(-45deg, #ffffff, #ffebeb, #fff5f5, #ffe5e5);
+}
+
+/* 🌙 Dark Theme Gradient */
+[data-theme="dark"] {
+  --background-gradient: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2b2b2b, #b83030);
+}
